@@ -1,0 +1,23 @@
+{
+  "name": "XP_Paint",
+  "version": "1.0.0",
+  "description": "An Windows XP-based fork of JS Paint",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "clean-css": "4.2.3",
+    "fs-extra": "9.0.1",
+    "globby": "11.0.1",
+    "html-minifier": "4.0.0",
+    "uglify-es": "3.3.9"
+  },
+  "keywords": [
+    "Windows XP",
+    "MS Paint",
+    "Paint"
+  ],
+  "author": "Chowder Man",
+  "license": "MIT"
+}

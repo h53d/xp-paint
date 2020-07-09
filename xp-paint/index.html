@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>XP Paint</title>
+
+		<link href="styles/normalize.css" rel="stylesheet" type="text/css">
+		<link href="styles/layout.css" rel="stylesheet" type="text/css">
+		<link href="styles/print.css" rel="stylesheet" type="text/css" media="print">
+		<link href="lib/os-gui/layout.css" rel="stylesheet" type="text/css">
+		<link href="styles/xp.css" rel="stylesheet" type="text/css">
+		<!-- font looked different than the origional and doesnt render well on browsers
+			 due to anti aliasing
+		<link href="fonts/font.css" rel="stylesheet" type="text/css">
+		-->
+
+		<link rel="apple-touch-icon" href="images/icons/apple-icon-180x180.png">
+		<link rel="shortcut icon" href="favicon.png">
+		<link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="red">
+		<meta name="msapplication-TileColor" content="#008080">
+		<meta name="msapplication-TileImage" content="images/icons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#000080">
+
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+
+		<script src="src/theme-consts.js"></script>
+		<script src="src/theme.js"></script>
+	</head>
+	<body>
+		<script src="lib/jquery-3.4.1.min.js"></script>
+		<script src="lib/pep.js"></script>
+		<script src="lib/canvas.toBlob.js"></script>
+		<script src="lib/gif.js/gif.js"></script>
+		<script src="lib/palette.js"></script>
+		<script src="lib/FileSaver.js"></script>
+		<script src="lib/font-detective.js"></script>
+		<script src="lib/libtess.min.js"></script>
+		<script src="lib/os-gui/parse-theme.js"></script>
+		<script src="lib/os-gui/$Window.js"></script>
+		<script src="lib/os-gui/$MenuBar.js"></script>
+		<script src="lib/imagetracer_v1.2.5.js"></script>
+		<script src="lib/xp.js"></script>
+
+		<script src="src/cursor-consts.js"></script>
+		<script src="src/help-icons-consts.js"></script>
+		<script src="src/helpers.js"></script>
+		<script src="src/storage.js"></script>
+		<script src="src/$Component.js"></script>
+		<script src="src/$ToolWindow.js"></script>
+		<script src="src/toolbox-consts.js"></script>
+		<script src="src/$ToolBox.js"></script>
+		<script src="src/$ColorBox.js"></script>
+		<script src="src/font-box-consts.js"></script>
+		<script src="src/$FontBox.js"></script>
+		<script src="src/$Handles.js"></script>
+		<script src="src/OnCanvasObject.js"></script>
+		<script src="src/OnCanvasSelection.js"></script>
+		<script src="src/OnCanvasTextBox.js"></script>
+		<script src="src/OnCanvasHelperLayer.js"></script>
+		<script src="src/image-manipulation.js"></script>
+		<script src="src/tool-options.js"></script>
+		<script src="src/tools.js"></script>
+		<script src="src/gif-worker-consts.js"></script>
+		<script src="src/strech-and-skew-consts.js"></script>
+		<script src="src/about-consts.js"></script>
+		<script src="src/functions.js"></script>
+		<script src="src/manage-storage.js"></script>
+		<script src="src/chm-icons-consts.js"></script>
+		<script src="src/help.js"></script>
+		<script src="src/menus.js"></script>
+		<script src="src/app.js"></script>
+		
+
+		<script>
+			if(/MSIE \d|Trident.*rv:/.test(navigator.userAgent)){
+				document.write(
+					'<style>body { text-align: center; }</style>' +
+					'<div className="not-supported">' +
+						'<h1 className="not-supported-header">Internet Explorer is not supported!</h1>' +
+						'<p className="not-supported-details">Try Chrome, Firefox, or Edge.</p>' +
+					'</div>'
+				);
+			}
+		</script>
+		<noscript>
+			<h1><img src="images/icons/32x32.png" width="32" height="32" alt=""/> XP Paint</h1>
+
+			<p>This application requires JavaScript to run.</p>
+
+			<p>You can also check out <a href="https://github.com/1j01/jspaint">the source code and project info</a>.</p>
+		</noscript>
+		
+		<svg style="position: absolute; pointer-events: none; bottom: 100%;">
+			<defs>
+				<filter id="disabled-inset-filter" x="0" y="0" width="1px" height="1px">
+					<feColorMatrix
+						in="SourceGraphic"
+						type="matrix"
+						values="
+							1 0 0 0 0
+							0 1 0 0 0
+							0 0 1 0 0
+							-1000 -1000 -1000 1 0
+						"
+						result="black-parts-isolated"
+					/>
+					<feFlood result="shadow-color" flood-color="var(--ButtonShadow)"/>
+					<feFlood result="hilight-color" flood-color="var(--ButtonHilight)"/>
+					<feOffset in="black-parts-isolated" dx="1" dy="1" result="offset"/>
+					<feComposite in="hilight-color" in2="offset" operator="in" result="hilight-colored-offset"/>
+					<feComposite in="shadow-color" in2="black-parts-isolated" operator="in" result="shadow-colored"/>
+					<feMerge>
+						<feMergeNode in="hilight-colored-offset"/>
+						<feMergeNode in="shadow-colored"/>
+					</feMerge>
+				</filter>
+			</defs>
+		</svg>
+	</body>
+</html>

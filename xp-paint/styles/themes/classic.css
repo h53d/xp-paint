@@ -1,0 +1,1196 @@
+/*@import "../../lib/os-gui/windows-98.css";*/
+:root {
+	/* These resources are generated. */
+	/* JS: makeThemeCSSFile(renderThemeGraphics(getComputedStyle(document.documentElement))) */
+	--checker: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC");
+	--button-active-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	--button-normal-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	--inset-deep-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	--button-default-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h96v32h-64v64h-32v-96z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M160%2064h32v128h-128v-32h96v-96z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M96%2096h64v64h-64v-64z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 96 / 3px;
+	--button-default-active-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h256v256h-256v-256z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h192v192h-192v-192z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%09%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%22256%22%20height%3D%22256%22%20stroke-width%3D%2264%22%20stroke%3D%22%20rgb(0%2C%200%2C%200)%22%20fill%3D%22none%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	--scrollbar-arrows-ButtonText: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==");
+	--scrollbar-arrows-GrayText: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDmpoaPjf0NBAlNnoauGaQBLooYXLUEIWwswi5Chs6lB8gewofI6BOZwWajCCFZ/viQ1FqoUQtRI4oShFtgdnGqKWYyg1h6icQKklpOgHAM9mQArEvm5+AAAAAElFTkSuQmCC");
+	--scrollbar-arrows-ButtonHilight: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDvr///9/RkZGosxGVwvXBJJADy1chhKyEGYWIUdhU4fiC2RH4XMMzOG0UIMRrPh8T2woUi2EqJXACUUpsj040xC1HEOpOUTlBEotIUU/AKXFQAqyTJ6DAAAAAElFTkSuQmCC");
+	--scrollbar-size: 13px;
+	--scrollbar-button-inner-size: 9px;
+
+	/* Colors */
+	--ActiveBorder: rgb(192, 192, 192);
+	--ActiveTitle: rgb(0, 0, 128);
+	--AppWorkspace: rgb(128, 128, 128);
+	--Background: rgb(0, 128, 128);
+	--ButtonAlternateFace: rgb(180, 180, 180);
+	--ButtonDkShadow: rgb(0, 0, 0);
+	--ButtonFace: rgb(192, 192, 192);
+	--ButtonHilight: rgb(255, 255, 255);
+	--ButtonLight: rgb(223, 223, 223);
+	--ButtonShadow: rgb(128, 128, 128);
+	--ButtonText: rgb(0, 0, 0);
+	--GradientActiveTitle: rgb(16, 132, 208);
+	--GradientInactiveTitle: rgb(181, 181, 181);
+	--GrayText: rgb(128, 128, 128);
+	--Hilight: rgb(0, 0, 128);
+	--HilightText: rgb(255, 255, 255);
+	--HotTrackingColor: rgb(0, 0, 255);
+	--InactiveBorder: rgb(192, 192, 192);
+	--InactiveTitle: rgb(128, 128, 128);
+	--InactiveTitleText: rgb(192, 192, 192);
+	--InfoText: rgb(0, 0, 0);
+	--InfoWindow: rgb(255, 255, 225);
+	--Menu: rgb(192, 192, 192);
+	--MenuText: rgb(0, 0, 0);
+	--Scrollbar: rgb(192, 192, 192);
+	--TitleText: rgb(255, 255, 255);
+	--Window: rgb(255, 255, 255);
+	--WindowFrame: rgb(0, 0, 0);
+	--WindowText: rgb(0, 0, 0);
+}
+
+.inset-deep {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+	border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight) var(--ButtonShadow);
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	color: rgb(0, 0, 0);
+	color: var(--ButtonText);
+	/* as fallback */
+	position: relative;
+	/* for pseudo element(s) */
+	-o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	   border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	-o-border-image: var(--inset-deep-border-image);
+	   border-image: var(--inset-deep-border-image);
+	border-color: rgb(128, 128, 128);
+	border-color: var(--ButtonShadow);
+	border-style: solid;
+	border-width: 2px 2px;
+}
+.outset-deep {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+	border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonHilight);
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	color: rgb(0, 0, 0);
+	color: var(--ButtonText);
+	/* as fallback */
+	position: relative;
+	/* for pseudo element(s) */
+	-o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	   border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	-o-border-image: var(--button-normal-border-image);
+	   border-image: var(--button-normal-border-image);
+	border-color: rgb(223, 223, 223) rgb(128, 128, 128) rgb(128, 128, 128) rgb(223, 223, 223);
+	border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonLight);
+	border-style: solid;
+	border-width: 2px 2px;
+}
+.inset-shallow {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+	border-color: var(--ButtonShadow) var(--ButtonHilight) var(--ButtonHilight) var(--ButtonShadow);
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	color: rgb(0, 0, 0);
+	color: var(--ButtonText);
+}
+.outset-shallow {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+	border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonHilight);
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	color: rgb(0, 0, 0);
+	color: var(--ButtonText);
+}
+
+.os-window .window-titlebar,
+body > .window-titlebar {
+	background: rgb(0, 0, 128);
+	background: var(--ActiveTitle);
+	background: linear-gradient(to right, rgb(0, 0, 128) 0%, rgb(16, 132, 208) 100%);
+	background: linear-gradient(to right, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%);
+	
+	color: rgb(255, 255, 255);
+	
+	color: var(--TitleText);
+}
+
+.os-window .window-titlebar, body > .window-titlebar {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+}
+
+.os-window .window-titlebar,
+body > .window-titlebar {
+	font-weight: bold;
+}
+.os-window:not(.focused) .window-titlebar {
+	background: darkgray;
+	background: linear-gradient(to right, rgb(128, 128, 128) 0%, rgb(181, 181, 181) 100%);
+	background: linear-gradient(to right, var(--InactiveTitle) 0%, var(--GradientInactiveTitle) 100%);
+
+	color: rgb(192, 192, 192);
+
+	color: var(--InactiveTitleText);
+}
+.os-window {
+	/* Needed for when maximized, otherwise would be provided by %outset-deep */
+	background: rgb(192, 192, 192);
+	background: var(--ButtonFace);
+
+	/* background: var(--Window); */
+	/*color: var(--WindowText);*/
+	/*border: 1px solid var(--WindowFrame);*/
+	/* TODO: use window-specific theme colors; also different types of windows */
+	/* padding: 2px; */
+}
+.os-window:not(.maximized) {
+	border-style: solid;
+	border-width: 1px;
+	border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+	border-color: var(--ButtonHilight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonHilight);
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	color: rgb(0, 0, 0);
+	color: var(--ButtonText);
+	/* as fallback */
+	position: relative;
+	/* for pseudo element(s) */
+	-o-border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	   border-image: url("data:image/svg+xml,%3Csvg%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22256px%22%20height%3D%22256px%22%20viewBox%3D%220%200%20256%20256%22%3E%0A%09%09%09%0A%09%09%3Cpath%20d%3D%22M0%200h224v32h-192v192h-32v-224z%22%20fill%3D%22%20rgb(255%2C%20255%2C%20255)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M224%200h32v256h-256v-32h224v-224z%22%20fill%3D%22%20rgb(0%2C%200%2C%200)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M32%2032h160v32h-128v128h-32v-160z%22%20fill%3D%22%20rgb(223%2C%20223%2C%20223)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M192%2032h32v192h-192v-32h160v-160z%22%20fill%3D%22%20rgb(128%2C%20128%2C%20128)%22%2F%3E%0A%09%09%3Cpath%20d%3D%22M64%2064h128v128h-128v-128z%22%20fill%3D%22%20rgb(192%2C%20192%2C%20192)%22%2F%3E%0A%09%0A%09%09%3C%2Fsvg%3E") 64 / 2px;
+	-o-border-image: var(--button-normal-border-image);
+	   border-image: var(--button-normal-border-image);
+	border-color: rgb(223, 223, 223) rgb(128, 128, 128) rgb(128, 128, 128) rgb(223, 223, 223);
+	border-color: var(--ButtonLight) var(--ButtonShadow) var(--ButtonShadow) var(--ButtonLight);
+	border-style: solid;
+	border-width: 2px 2px;
+}
+.os-window > * {
+	/* margin: 1px; */
+}
+.window-button {
+	margin: 2px 0;
+}
+.window-close-button {
+	margin-left: 2px;
+	margin-right: 2px;
+}
+.os-window .window-title-area {
+	height: 16px; /* 100% doesn't work */
+}
+.os-window .window-title {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: inline-block !important;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	padding-left: 2px;
+}
+.window-close-button {
+	/* display: block !important; */
+	/* float: right; */
+	/* width: 13px;
+	height: 11px; */
+}
+.window-close-button,
+.window-maximize-button,
+.window-minimize-button {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAAKCAYAAADo3z3CAAAAoUlEQVRIS9VVWw7AIAib9z/0FpZgCOFRgpluf9MClhYdV++7gfDhYLxYDw+UyiHd5F8S5lr6zNa6Xpv/KwhHOahQpLB1+CwfycgYrwmE0WK8MTsIR1aOGsR+NYkkYzN5/pGwVA9xA/diq8LeHCKuQxQ+aoYt2yJWtpSNZth0edRpGVC5eGQcSg4hXLml3fdpBeHs8evWyPKX9ruXVqnYCeAHA8IyC9K2kmkAAAAASUVORK5CYII=");
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+	display: block;
+	width: 16px;
+	height: 14px;
+	padding: 0;
+}
+
+.window-close-button {
+	background-position: calc(-3 * 13px - 1px) 0px;
+}
+.window-maximize-button {
+	background-position: calc(-1 * 13px - 1px) 0px;
+}
+.maximized .window-maximize-button {
+	background-position: calc(-2 * 13px - 1px) 0px;
+}
+.window-minimize-button {
+	background-position: calc(-0 * 13px - 1px) 0px;
+}
+
+.window-close-button:hover:active {
+	background-position: calc(-3 * 13px - 0px) 1px;
+}
+.window-maximize-button:hover:active {
+	background-position: calc(-1 * 13px - 0px) 1px;
+}
+.maximized .window-maximize-button:hover:active {
+	background-position: calc(-2 * 13px - 0px) 1px;
+}
+.window-minimize-button:hover:active {
+	background-position: calc(-0 * 13px - 0px) 1px;
+}
+
+
+.menus {
+	background: #ece9d8;
+	/*background: var(--Menu);*/
+	color: rgb(0, 0, 0);
+	color: var(--MenuText);
+}
+.os-window:not(.focused) .menus {
+	color: rgb(128, 128, 128);
+	color: var(--GrayText);
+}
+.menus *, .menu-popup * {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+}
+.menu-container {
+	margin-bottom: 1px;
+}
+.menu-button {
+	box-sizing: border-box;
+	height: 18px;
+	line-height: 1;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	padding: 2px 5px;
+	position: relative;
+	outline: 0;
+	/* @extend button.lightweight; */
+	background: #ece9d8;
+	/*background: var(--Menu);*/
+}
+/*
+.menu-button:hover {
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+}
+.menu-button:active,
+.menu-button.active {
+	box-shadow: 1px 1px 0 rgb(128, 128, 128) inset, -1px -1px 0 rgb(255, 255, 255) inset;
+	box-shadow: 1px 1px 0 var(--ButtonShadow) inset, -1px -1px 0 var(--ButtonHilight) inset;
+	top: 1px;
+	left: 1px;
+}
+*/
+
+
+.menu-popup {
+	display: block;
+	padding: 2px;
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	/*box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;*/
+	background: rgb(192, 192, 192);
+	background: var(--Menu);
+	color: rgb(0, 0, 0);
+	color: var(--MenuText);
+}
+/*
+.menu-item {
+	padding: 1px 3px;
+	margin: 2px;
+}
+.menu-item[disabled] {
+	color: rgb(128, 128, 128);
+	color: var(--GrayText);
+	text-shadow: 0.8px 0.8px 0px rgb(255, 255, 255);
+	text-shadow: 0.8px 0.8px 0px var(--ButtonHilight);
+}
+.menu-item:focus,
+.menu-item.active {
+	background: rgb(0, 0, 128);
+	background: var(--Hilight);
+	color: rgb(255, 255, 255);
+	color: var(--HilightText);
+	text-shadow: none;
+	outline: 0;
+}
+*/
+.menu-item .menu-item-shortcut {
+	padding-left: 10px;
+}
+.menu-hr {
+	border: 0;
+	border-top: 1px solid rgb(128, 128, 128);
+	border-top: 1px solid var(--ButtonShadow);
+	border-bottom: 1px solid rgb(255, 255, 255);
+	border-bottom: 1px solid var(--ButtonHilight);
+	margin: 0px 2px;
+}
+.menu-hotkey {
+	text-decoration: underline;
+}
+
+
+::-moz-selection {
+	background-color: rgb(0, 0, 128);
+	background-color: var(--Hilight);
+	color: rgb(255, 255, 255);
+	color: var(--HilightText);
+}
+
+
+.scrollbar {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+}
+.scrollbar-thumb {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+}
+.scrollbar-track-piece:hover:active {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+	background-color: white;
+	background-blend-mode: difference;
+	/* background-attachment: fixed; breaks the checkered background in chrome */
+}
+.scrollbar-track-piece.increment {
+	background-position: bottom;
+}
+.scrollbar-corner {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+}
+
+.scrollbar-button {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==");
+	background-image: var(--scrollbar-arrows-ButtonText);
+	-ms-interpolation-mode: nearest-neighbor;
+	    image-rendering: -moz-crisp-edges;
+	    image-rendering: pixelated;
+	width: 13px;
+	width: var(--scrollbar-size);
+	height: 13px;
+	height: var(--scrollbar-size);
+	box-sizing: border-box;
+}
+.scrollbar-button:not(.disabled):hover:active {
+	border: 1px solid rgb(128, 128, 128);
+	border: 1px solid var(--ButtonShadow);
+	box-shadow: none;
+}
+.scrollbar-button.disabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDmpoaPjf0NBAlNnoauGaQBLooYXLUEIWwswi5Chs6lB8gewofI6BOZwWajCCFZ/viQ1FqoUQtRI4oShFtgdnGqKWYyg1h6icQKklpOgHAM9mQArEvm5+AAAAAElFTkSuQmCC"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDvr///9/RkZGosxGVwvXBJJADy1chhKyEGYWIUdhU4fiC2RH4XMMzOG0UIMRrPh8T2woUi2EqJXACUUpsj040xC1HEOpOUTlBEotIUU/AKXFQAqyTJ6DAAAAAElFTkSuQmCC");
+	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
+}
+
+.scrollbar-button.horizontal.decrement.disabled {
+	background-position: /* left arrow */
+		calc(9px * -3 + 1px) 1px,
+		calc(9px * -3 + 2px) 2px;
+	background-position: /* left arrow */
+		calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -3 + 2px) 2px;
+}
+.scrollbar-button.horizontal.increment.disabled {
+	background-position: /* right arrow */
+		calc(9px * -2 + 1px) 1px,
+		calc(9px * -2 + 2px) 2px;
+	background-position: /* right arrow */
+		calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -2 + 2px) 2px;
+}
+.scrollbar-button.vertical.decrement.disabled {
+	background-position: /* up arrow */
+		calc(9px * -1 + 1px) 1px,
+		calc(9px * -1 + 2px) 2px;
+	background-position: /* up arrow */
+		calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -1 + 2px) 2px;
+}
+.scrollbar-button.vertical.increment.disabled {
+	background-position: /* down arrow */
+		calc(9px * -0 + 1px) 1px,
+		calc(9px * -0 + 2px) 2px;
+	background-position: /* down arrow */
+		calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -0 + 2px) 2px;
+}
+
+.scrollbar-button.horizontal.decrement {
+	background-position: calc(9px * -3 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px; /* left */
+}
+.scrollbar-button.horizontal.increment {
+	background-position: calc(9px * -2 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px; /* right */
+}
+.scrollbar-button.vertical.decrement {
+	background-position: calc(9px * -1 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px; /* up */
+}
+.scrollbar-button.vertical.increment {
+	background-position: calc(9px * -0 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px; /* down */
+}
+
+::-webkit-scrollbar,
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-button {
+	width: 13px;
+	width: var(--scrollbar-size);
+	height: 13px;
+	height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	image-rendering: pixelated;
+}
+::-webkit-scrollbar-thumb {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+}
+::-webkit-scrollbar-corner {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+}
+
+::-webkit-scrollbar-button {
+	background-color: rgb(192, 192, 192);
+	background-color: var(--ButtonFace);
+	border-top: 1px solid rgb(192, 192, 192);
+	border-top: 1px solid var(--ButtonFace);
+	border-left: 1px solid rgb(192, 192, 192);
+	border-left: 1px solid var(--ButtonFace);
+	border-right: 1px solid rgb(0, 0, 0);
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid rgb(0, 0, 0);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+	box-shadow: 1px 1px 0 rgb(255, 255, 255) inset, -1px -1px 0 rgb(128, 128, 128) inset;
+	box-shadow: 1px 1px 0 var(--ButtonHilight) inset, -1px -1px 0 var(--ButtonShadow) inset;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAW0lEQVQ4T2NkGGSAcZC5h4FWDvrPwEC02ShqkR0EkkAHuBxMyEKYWYQ8jKEOXQOyo/A5BuZwqqvBZiA+3xMbilQLIWqlcUJRimwPzjRELcdQZA6hREeR4eRoBgBoXhAK6oiMhwAAAABJRU5ErkJggg==");
+	background-image: var(--scrollbar-arrows-ButtonText);
+	image-rendering: pixelated;
+	width: 13px;
+	width: var(--scrollbar-size);
+	height: 13px;
+	height: var(--scrollbar-size);
+	box-sizing: border-box;
+}
+
+::-webkit-scrollbar-button:not(.disabled):hover:active {
+	border: 1px solid rgb(128, 128, 128);
+	border: 1px solid var(--ButtonShadow);
+	box-shadow: none;
+}
+
+::-webkit-scrollbar-button.disabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDmpoaPjf0NBAlNnoauGaQBLooYXLUEIWwswi5Chs6lB8gewofI6BOZwWajCCFZ/viQ1FqoUQtRI4oShFtgdnGqKWYyg1h6icQKklpOgHAM9mQArEvm5+AAAAAElFTkSuQmCC"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDvr///9/RkZGosxGVwvXBJJADy1chhKyEGYWIUdhU4fiC2RH4XMMzOG0UIMRrPh8T2woUi2EqJXACUUpsj040xC1HEOpOUTlBEotIUU/AKXFQAqyTJ6DAAAAAElFTkSuQmCC");
+	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
+}
+
+::-webkit-scrollbar-button.horizontal.decrement.disabled {
+	background-position: /* left arrow */
+		calc(9px * -3 + 1px) 1px,
+		calc(9px * -3 + 2px) 2px;
+	background-position: /* left arrow */
+		calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -3 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button.horizontal.increment.disabled {
+	background-position: /* right arrow */
+		calc(9px * -2 + 1px) 1px,
+		calc(9px * -2 + 2px) 2px;
+	background-position: /* right arrow */
+		calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -2 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button.vertical.decrement.disabled {
+	background-position: /* up arrow */
+		calc(9px * -1 + 1px) 1px,
+		calc(9px * -1 + 2px) 2px;
+	background-position: /* up arrow */
+		calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -1 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button.vertical.increment.disabled {
+	background-position: /* down arrow */
+		calc(9px * -0 + 1px) 1px,
+		calc(9px * -0 + 2px) 2px;
+	background-position: /* down arrow */
+		calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -0 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button.horizontal.decrement {
+	background-position: calc(9px * -3 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px;
+	/* left */
+}
+
+::-webkit-scrollbar-button.horizontal.increment {
+	background-position: calc(9px * -2 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px;
+	/* right */
+}
+
+::-webkit-scrollbar-button.vertical.decrement {
+	background-position: calc(9px * -1 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px;
+	/* up */
+}
+
+::-webkit-scrollbar-button.vertical.increment {
+	background-position: calc(9px * -0 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px;
+	/* down */
+}
+::-webkit-scrollbar-button:hover:active {
+	border: 1px solid rgb(128, 128, 128);
+	border: 1px solid var(--ButtonShadow);
+	box-shadow: none;
+}
+::-webkit-scrollbar-button:disabled {
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDmpoaPjf0NBAlNnoauGaQBLooYXLUEIWwswi5Chs6lB8gewofI6BOZwWajCCFZ/viQ1FqoUQtRI4oShFtgdnGqKWYyg1h6icQKklpOgHAM9mQArEvm5+AAAAAElFTkSuQmCC"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAJCAYAAABaMo5wAAAAYElEQVQ4T2NkGGSAcZC5h4EmDvr///9/RkZGosxGVwvXBJJADy1chhKyEGYWIUdhU4fiC2RH4XMMzOG0UIMRrPh8T2woUi2EqJXACUUpsj040xC1HEOpOUTlBEotIUU/AKXFQAqyTJ6DAAAAAElFTkSuQmCC");
+	background-image: var(--scrollbar-arrows-GrayText), var(--scrollbar-arrows-ButtonHilight);
+}
+
+::-webkit-scrollbar-button:horizontal:decrement:disabled {
+	background-position: /* left arrow */
+		calc(9px * -3 + 1px) 1px,
+		calc(9px * -3 + 2px) 2px;
+	background-position: /* left arrow */
+		calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -3 + 2px) 2px;
+}
+::-webkit-scrollbar-button:horizontal:increment:disabled {
+	background-position: /* right arrow */
+		calc(9px * -2 + 1px) 1px,
+		calc(9px * -2 + 2px) 2px;
+	background-position: /* right arrow */
+		calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -2 + 2px) 2px;
+}
+::-webkit-scrollbar-button:vertical:decrement:disabled {
+	background-position: /* up arrow */
+		calc(9px * -1 + 1px) 1px,
+		calc(9px * -1 + 2px) 2px;
+	background-position: /* up arrow */
+		calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -1 + 2px) 2px;
+}
+::-webkit-scrollbar-button:vertical:increment:disabled {
+	background-position: /* down arrow */
+		calc(9px * -0 + 1px) 1px,
+		calc(9px * -0 + 2px) 2px;
+	background-position: /* down arrow */
+		calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -0 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement.disabled {
+	background-position: /* left arrow */
+		calc(9px * -3 + 1px) 1px,
+		calc(9px * -3 + 2px) 2px;
+	background-position: /* left arrow */
+		calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -3 + 2px) 2px;
+}
+
+::-webkit-scrollbar-button:horizontal:decrement {
+	background-position: calc(9px * -3 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -3 + 1px) 1px;
+	/* left */
+}
+::-webkit-scrollbar-button:horizontal:increment.disabled {
+	background-position: /* right arrow */
+		calc(9px * -2 + 1px) 1px,
+		calc(9px * -2 + 2px) 2px;
+	background-position: /* right arrow */
+		calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -2 + 2px) 2px;
+}
+::-webkit-scrollbar-button:horizontal:increment {
+	background-position: calc(9px * -2 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -2 + 1px) 1px;
+	/* right */
+}
+::-webkit-scrollbar-button:vertical:decrement.disabled {
+	background-position: /* up arrow */
+		calc(9px * -1 + 1px) 1px,
+		calc(9px * -1 + 2px) 2px;
+	background-position: /* up arrow */
+		calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -1 + 2px) 2px;
+}
+::-webkit-scrollbar-button:vertical:decrement {
+	background-position: calc(9px * -1 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -1 + 1px) 1px;
+	/* up */
+}
+::-webkit-scrollbar-button:vertical:increment.disabled {
+	background-position: /* down arrow */
+		calc(9px * -0 + 1px) 1px,
+		calc(9px * -0 + 2px) 2px;
+	background-position: /* down arrow */
+		calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px,
+		calc(var(--scrollbar-button-inner-size) * -0 + 2px) 2px;
+}
+::-webkit-scrollbar-button:vertical:increment {
+	background-position: calc(9px * -0 + 1px) 1px;
+	background-position: calc(var(--scrollbar-button-inner-size) * -0 + 1px) 1px;
+	/* down */
+}
+
+::-webkit-scrollbar-track-piece:hover:active {
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAG0lEQVQYV2P8/////4MHDzIwHjhw4L+9vT0DAHAFCj6esq3FAAAAAElFTkSuQmCC") repeat;
+	background: var(--checker) repeat;
+	image-rendering: pixelated;
+	background-color: white;
+	background-blend-mode: difference;
+	/* background-attachment: fixed; breaks the checkered background in chrome */
+}
+
+::-webkit-scrollbar-track-piece.increment {
+	background-position: bottom;
+}
+::-webkit-scrollbar-track-piece:increment {
+	background-position: bottom;
+}
+
+/* turn off double buttons */
+::-webkit-scrollbar-button:start:increment,
+::-webkit-scrollbar-button:end:decrement {
+	display: none;
+}
+
+/*# sourceMappingURL=windows-98.css.map */
+
+
+
+/* Custom themes to windows XP style */
+.menus,
+.component-area,
+.status-area {
+	background-color: #eeecdd !important;
+}
+
+.tool {
+	border: none !important;
+	border-top: none !important;
+	border-right: none !important;
+	border-bottom: none !important;
+	border-left: none !important;
+	box-shadow: none !important;
+	background-image: none !important;
+	border-image: none !important;
+	border-image-width: 0px !important;
+	padding: 8px !important;
+}
+
+.tool.selected {
+	background-color: #f8f8f8 !important;
+	border-radius: 4px !important;
+	border: 1px solid #9f9f9f !important;
+}
+
+.menus {
+  height: 26px !important;
+}
+
+.status-area {
+  height: 18px !important;
+}
+
+.status-text {
+  /*font-size: 7px !important;*/
+  letter-spacing: 0.5px;
+}
+
+.menu-button {
+  margin-top: 4px !important;
+  margin-bottom: auto !important;
+  margin-right: 6px !important;
+  margin-left: 4px !important;
+}
+
+.menu-container:hover, .menu-container:active, .menu-button:hover, .menu-button:active {
+  background-color: #3169c6;
+  color: white;
+  transition-duration: 0ms;
+  transition-property: none;
+}
+
+.menu-button {
+  background-color: rgba(0,0,0,0);
+}
+
+.menu-popup {
+  background-color: #ffffff !important;
+  border: 1px solid #adaa9c !important;
+  box-shadow: 2px 2px 2px grey !important;
+}
+
+.menu-hr {
+  border: 0px solid #adaa9c !important;
+  border-bottom: 1px solid #adaa9c !important;
+}
+
+.menu-item {
+  /*padding: 0px !important;*/
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+.menu-item:hover {
+	background-color: #3169c6;
+	color: white;
+}
+
+.menus {
+	border-bottom: 1px solid white;
+}
+
+.horizontal {
+	border-top: 1px solid #adaa9c;
+	border-right: 1px solid #adaa9c;
+	border-bottom: 1px solid #adaa9c;
+}
+
+.component-area {
+	border-top: 1px solid white;
+}
+
+.tool:hover {
+	background-color: #fdfdfb !important;
+	border: 1px solid #cecec3 !important;
+	border-radius: 4px !important;
+	transition-duration: 0ms !important;
+	box-shadow: 1px 1px 1px #cecec3 !important;
+}
+
+/* @import "../../lib/os-gui/windows-default.css"; */
+/* @import "../../lib/os-gui/peggys-pastels.css"; */
+
+:root {
+	--theme-loaded: "classic.css";
+}
+
+.jspaint {
+	background: var(--ButtonFace);
+}
+body,
+.canvas-area {
+	background: var(--AppWorkspace);
+}
+.canvas-area {
+	border: 1px inset;
+}
+.canvas-area > canvas {
+	background: var(--checker);
+	/* 16px is a common grid size, but that gives 8px grid cells, and our max zoom is 8x */
+	/*background-size: 16px;*/
+	background-size: 8px;
+}
+
+@media (resolution: 1x), (resolution: 2x), (min-resolution: 3x) {
+	* {
+		image-rendering: -moz-crisp-edges;
+		image-rendering: crisp-edges;
+		image-rendering: pixelated;
+	}
+}
+.disable-aa-for-things-at-main-canvas-scale .main-canvas,
+.disable-aa-for-things-at-main-canvas-scale .selection canvas {
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+	image-rendering: pixelated;
+}
+
+.selection:after,
+.textbox:after {
+	content: '';
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	outline: 1px dashed black;
+	box-shadow: 0 0 0 1px white;
+}
+.handle {
+	background: var(--Hilight);
+}
+.useless-handle {
+	background: var(--HilightText); /* @TODO: --ButtonHilight? --Window? */
+	box-shadow: 1px 1px 0 var(--Hilight) inset;
+}
+.resize-ghost {
+	outline: 1px dotted black;
+	/*outline: 1px dotted invert;*/
+	/* I want this to be inverty, but in chrome this makes it invisible */
+}
+
+.status-area {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+	color: var(--ButtonText);
+	padding: 3px 2px;
+	padding-top: 4px;
+	border-top: 1px solid var(--ButtonShadow);
+	outline: 1px solid var(--ButtonShadow);
+	outline-offset: 1px;
+}
+
+.text-toolbar-button-group button:not(:first-child) {
+	margin-left: 0;
+}
+.text-toolbar-button-group button:not(:last-child) {
+	margin-right: 0;
+}
+
+.tool-options {
+	border: 1px solid var(--ButtonHilight);
+	border-top-color: var(--ButtonShadow);
+	border-left-color: var(--ButtonShadow);
+}
+.tool {
+	margin: 0;
+	padding: 0;
+	width: 25px;
+	height: 25px;
+	border: 0;
+	/*border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid var(--ButtonDkShadow);*/
+	background: transparent;
+	outline: 0;
+}
+.tool:before {
+	content: " ";
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	/*border-top: 1px solid var(--ButtonHilight);
+	border-left: 1px solid var(--ButtonHilight);
+	border-right: 1px solid var(--ButtonShadow);
+	border-bottom: 1px solid var(--ButtonShadow);*/
+}
+.tool:hover:active {
+	padding: 1px;
+	background: transparent !important;
+}
+.tool:hover:active,
+.tool.selected {
+	padding-bottom: 2px;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	/*border-top: 1px solid var(--ButtonDkShadow);
+	border-left: 1px solid var(--ButtonDkShadow);
+	border-right: 1px solid var(--ButtonHilight);
+	border-bottom: 1px solid var(--ButtonHilight);*/
+}
+.tool:hover:active:before,
+.tool.selected:before {
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	/*border-top: 1px solid var(--ButtonShadow);
+	border-left: 1px solid var(--ButtonShadow);
+	border-right: 1px solid var(--ButtonFace);
+	border-bottom: 1px solid var(--ButtonFace);*/
+}
+.tool.selected,
+.current-colors {
+	background: var(--checker);
+}
+
+.tools {
+	height: 200px;
+	width: 50px;
+}
+
+
+.current-colors {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+.color-selection {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	border-top: 1px solid var(--ButtonHilight);
+	border-left: 1px solid var(--ButtonHilight);
+	border-right: 1px solid var(--ButtonShadow);
+	border-bottom: 1px solid var(--ButtonShadow);
+}
+.color-selection:after {
+	content: '';
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	/* @TODO: ButtonAlternateFace? */
+	border: 1px solid var(--ButtonFace);
+}
+.current-colors,
+.color-button {
+	border-top: 1px solid var(--ButtonShadow);
+	border-left: 1px solid var(--ButtonShadow);
+	/* @TODO: var(--ButtonAlternateFace)? */
+	border-right: 1px solid var(--ButtonFace);
+	border-bottom: 1px solid var(--ButtonFace);
+	/*box-shadow: 1px 1px 0px var(--ButtonDkShadow) inset;*/
+}
+.swatch:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+}
+.color-selection:before {
+	left: 1px;
+	top: 1px;
+	right: 1px;
+	bottom: 1px;
+}
+.color-button:before,
+.current-colors:before,
+.swatch.pattern:before {
+	border-left: 1px solid var(--ButtonDkShadow);
+	border-top: 1px solid var(--ButtonDkShadow);
+}
+.swatch.pattern:before {
+	border-right: 1px solid var(--ButtonDkShadow);
+	border-bottom: 1px solid var(--ButtonDkShadow);
+}
+.current-colors:after,
+.color-button:after {
+	content: '';
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	right: -2px;
+	bottom: -2px;
+	border-right: 1px solid var(--ButtonHilight);
+	border-bottom: 1px solid var(--ButtonHilight);
+}
+
+
+.component-ghost.dock {
+	outline: 1px solid black;
+	/*outline: 1px solid invert;*/
+}
+.component-ghost:not(.dock) {
+	outline: 1px dotted black;
+	/*outline: 1px dotted invert;*/
+}
+.component-ghost:not(.dock):after,
+.component-ghost:not(.dock):before {
+	content: '';
+	position: absolute; left: 0; right: 0; top: 0; bottom: 0;
+	outline: 1px dotted black;
+	/*outline: 1px dotted invert;*/
+}
+.component-ghost:not(.dock):after {
+	outline-offset: 1px;
+}
+.component-ghost:not(.dock):before {
+	outline-offset: 2px;
+}
+
+
+.tool-window {
+	background: var(--ButtonFace);
+	border-top: 1px solid var(--ButtonLight);
+	border-left: 1px solid var(--ButtonLight);
+	border-right: 1px solid var(--WindowFrame);
+	border-bottom: 1px solid var(--WindowFrame);
+	padding: 2px;
+}
+.tool-window:after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border-top: 1px solid var(--ButtonHilight);
+	border-left: 1px solid var(--ButtonHilight);
+	border-right: 1px solid var(--ButtonShadow);
+	border-bottom: 1px solid var(--ButtonShadow);
+}
+.window > * {
+	margin: 1px;
+}
+.tool-window .window-titlebar {
+	background: var(--ActiveTitle); /* fallback to standard color */
+	background: -moz-linear-gradient(left, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%, var(--ActiveTitle)), color-stop(100%, var(--GradientActiveTitle))); /* Chrome, Safari4+ */
+	background: -webkit-linear-gradient(left, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%); /* Chrome10+, Safari5.1+ */
+	background: -o-linear-gradient(left, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%); /* IE10+ */
+	background: linear-gradient(to right, var(--ActiveTitle) 0%, var(--GradientActiveTitle) 100%); /* W3C */
+
+	color: var(--TitleText);
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+	height: 15px;
+}
+.tool-window .window-title {
+	padding-left: 2px;
+}
+.tool-window .window-close-button {
+	width: 13px;
+	height: 11px;
+	background-position: 8px 0;
+}
+.tool-window .window-close-button:hover:active {
+	background-position: 9px 1px;
+}
+.tool-window .window-titlebar button {
+	margin: 2px;
+}
+.window-content {
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+.help-window .item {
+	font-family: 'Segoe UI', sans-serif;
+	font-size: 12px;
+	padding: 0 2px;
+	position: relative; /* for ::after */
+}
+.help-window .item:hover {
+	text-decoration: underline;
+	color: #0000FF;
+	cursor: pointer;
+}
+.help-window li:before {
+	background-image: url("../../images/help-icons.png");
+}
+.help-window:not(.focused) .item.selected {
+	background-color: var(--ButtonFace);
+	color: var(--ButtonText); /* ?? */
+}
+.help-window.focused .item.selected {
+	background-color: var(--Hilight);
+	color: var(--HilightText);
+	/* @TODO: separate focus state of the item */
+	outline: 1px dotted black;
+	outline-offset: -1px;
+}
+/* @TODO: separate focus state of the item; while mouse down, the main highlight does not move with the arrow keys but this does, among other differences */
+/* .help-window.focused .item.selected::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	border: 1px dotted white;
+	mix-blend-mode: difference;
+} */
+
+input[type=text],
+input[type=url] {
+	/* @TODO: fancy 3d inset border (might need a surrounding element because pseudo elements won't work with input) */
+	/* I guess an image border could work; maybe I should be using (svg) image borders for stuff */
+	/* (css inset border style doesn't look good and isn't consistent between browsers) */
+	border: 1px solid gray;
+	background: var(--Window);
+	color: var(--WindowText);
+}
+
+input[type=number].no-spinner::-webkit-inner-spin-button,
+input[type=number].no-spinner::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type=number].no-spinner {
+	-moz-appearance: textfield;
+}
+
+input:invalid {
+	box-shadow: 0 0 0 2px red;
+}
+.partial-url-label {
+	opacity: 0.6;
+}
+
+.menu-popup tr .menu-item-label {
+	padding-top: 4px !important;
+	padding-bottom: 4px !important;
+}
+
+::selection {
+	color: white !important;
+	background-color: #316ac5 !important;
+}
