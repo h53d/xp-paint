@@ -1,8 +1,8 @@
-# XP Paint
+# ![Paint Logo](docs/logo.ping) XP Paint
 
-[Try out XP Paint here!]()
+[Try out XP Paint here!](https://chowderman.github.io/xp-paint.html)
 
-![XP Paint](Picture.png)
+![XP Paint](docs/example.png)
 
 _**Note: This is a fan project based on my nostalgia for the amazing Windows XP OS, but is in no way affiliated with Microsoft**_
 
@@ -16,7 +16,7 @@ XP Paint is a web-based version of MS Paint for Windows XP. It is a fork of JS P
 
 # Usage
 
-To use XP Paint, either click [this link]() to use it on the web, or simply [download a copy]() from this repo. The file `xp-paint.html` contains the entire XP Paint program, including all images and scripts needed to use XP Paint. The only other thing you'll need is a web browser to open the html file in!
+To use XP Paint, either click [this link](https://chowderman.github.io/xp-paint.html) to use it on the web, or simply [download a copy](https://github.com/chowderman/xp-paint/releases/download/v1.0.0/xp-paint.html) from this repo. The file `xp-paint.html` contains the entire XP Paint program, including all images and scripts needed to use XP Paint. The only other thing you'll need is a web browser to open the html file in!
 
 
 # Building XP Paint from source
