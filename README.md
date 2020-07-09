@@ -1,4 +1,4 @@
-# ![Paint Logo](docs/logo.ping) XP Paint
+# ![Paint Logo](docs/logo.png) XP Paint
 
 [Try out XP Paint here!](https://chowderman.github.io/xp-paint.html)
 
